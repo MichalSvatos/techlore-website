@@ -1,47 +1,57 @@
 mainNav:
   home:
     title: "Home"
-    url: /
-  about:
-    title: "About"
-    url: /about/
-  videos:
-    title: "Videos"
-    url: /videos/
-  goincognito:
-    title: "Go incognito"
-    url: /goincognito/
-  coaching:
-    title: "Coaching"
-    url: /coaching/
-  forum:
-    title: "Forum"
-    url: https://discuss.techlore.tech/
-    external: true
-  blog:
-    title: "Blog"
-    url: https://blog.techlore.tech/
-    external: true
+    url: https://techlore.tech/
   resources:
-    title: "Resources"
-    url: /resources/
+    title: "Privacy Tools"
+    url: https://privacytools.techlore.tech/
+  vpnToolkit:
+    title: "VPN Toolkit"
+    url: https://vpn.techlore.tech/
+  spaQuiz:
+    title: "SPA Quiz"
+    url: https://quiz.techlore.tech/
+  plexus:
+    title: "Plexus app"
+    url: https://plexus.techlore.tech
+    external: true
+  #about:
+  #  title: "About"
+  #  url: /about/
+  #videos:
+  #  title: "Videos"
+  #  url: /videos/
+  #goincognito:
+  #  title: "Go incognito"
+  #  url: /goincognito/
+  #coaching:
+  #  title: "Coaching"
+  #  url: /coaching/
+  #forum:
+  #  title: "Forum"
+  #  url: https://discuss.techlore.tech/
+  #  external: true
+  #blog:
+  #  title: "Blog"
+  #  url: https://blog.techlore.tech/
+  #  external: true
   support:
     title: "Support Us"
-    url: /support/
+    url: https://techlore.tech/support/
     icon: "heart-solid"
 
 footerNav:
   contact:
     title: "Contact"
-    url: /contact/
+    url: https://techlore.tech/contact/
 
 hiddenNav:
   spaQuiz:
     title: "SPA Quiz"
-    url: /spa/
+    url: https://quiz.techlore.tech/
   vpnToolkit:
     title: "VPN Toolkit"
-    url: /vpn/
+    url: https://vpn.techlore.tech/
   plexus:
     title: "Plexus app"
     url: https://plexus.techlore.tech
@@ -69,5 +79,8 @@ hiddenNav:
     title: "Techlore Tools & Affiliates"
     url: "/affiliates"
   privacy:
-    title: "Privacy policy"
-    url: "/privacy"
+    title: "Privacy"
+    url: https://techlore.tech/privacy-policy/
+  status:
+    title: "Status"
+    url: https://status.techlore.tech/

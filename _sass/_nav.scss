@@ -1,12 +1,30 @@
 .navbar {
-	@media (max-width: $desktop - 1px) {
-		position: sticky;
-		top: 0;
+	--_navBarGhostHeight: 3.90625rem;
+	position: sticky;
+	top: 1rem;
+	border-radius: 100vmax;
+	background-color: var(--translucent-bg);
+	backdrop-filter: blur(10px) saturate(180%);
+	transition: background-color 350ms ease-in-out;
+
+	@media (min-width: $desktop) {
+		width: 1200px;
+		max-width: 90vw;
+		margin-inline: auto;
+		min-height: var(--_navBarGhostHeight);
+	}
+}
+
+.navbar-start {
+	@media (min-width: $desktop) {
+		justify-content: center;
 	}
 }
 
 .navbar-brand {
 	a.navbar-item {
+		font-weight: 600;
+
 		&:hover {
 			--bulma-navbar-item-background-a: 0;
 
@@ -66,9 +84,26 @@
 }
 
 .navbar-item--logo {
+	margin-left: .75rem;
+
 	svg {
-		width: 2.5rem;
+		width: 2rem;
 		max-height: none;
+	}
+
+	&::after {
+		content: "Tools!";
+		color: white;
+		letter-spacing: 1px;
+		position: absolute;
+		rotate: -8deg;
+		left: 1.5rem;
+		top: 1.01rem;
+		font-size: .75rem;
+		background: var(--bulma-danger-50);
+		padding: .125rem .5rem .125rem 1.5rem;
+		border-radius: 100vmax;
+		z-index: -1;
 	}
 }
 
@@ -104,9 +139,10 @@ input[id="navbar-menu-toggle"] {
 
 	@media (max-width: $desktop - 1px) {
 		position: absolute;
-		inset: var(--bulma-navbar-height) 0 auto 0;
+		inset: var(--_navBarGhostHeight) 1rem auto 1rem;
 		overflow-y: scroll;
-		height: calc(100vh - var(--bulma-navbar-height));
+		height: calc(100vh - var(--_navBarGhostHeight));
+		border-radius: 1.5rem 1.5rem 0 0;
 	}
 }
 
@@ -126,7 +162,7 @@ input[id="navbar-menu-toggle"] {
 	}
 
 	a {
-		color: $light;
+		color: var(--ghost-text-color);
 		position: relative;
 
 		@media (max-width: $desktop - 1px) {
@@ -146,7 +182,7 @@ input[id="navbar-menu-toggle"] {
 			inset: auto 0 0 0;
 			height: calc(var(--bulma-size-5) * .125);
 			border-radius: 100vmax;
-			background-color: $light;
+			background-color: var(--ghost-text-color);
 			transform-origin: right;
 			transform: scaleX(0);
 			transition: transform .3s ease-in-out;

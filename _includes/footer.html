@@ -1,48 +1,25 @@
 {% include variables.html %}
 {% assign nav = site.data._en.navigation %}
 
-<footer class="footer pt-0">
-	{% include wave.html isFooter=true %}
-
+<footer class="footer" data-bottom-title="{{ site.name }}">
 	<a href="#top" class="footer__top-button js-go-top-button button is-primary" data-visibility="true">
 		{% include e_render-svg-icon.html icon="arrow-down" inline=true dimension=75 %}
 	</a>
 
 	<div class="container is-max-desktop">
 		<div class="columns has-1-cols has-3-cols-tablet has-5-cols-desktop is-multiline">
-			<div class="column">
-				<h6 class="footer__column-title">{{ site.name | upcase }}</h6>
-				<ul class="footer__list listless">
-					<li class="footer__list-item"><a href="{{ nav.mainNav.about.url | relative_url }}" class="footer__link is-touch-friendly">{{ nav.mainNav.about.title }}</a></li>
-					<li class="footer__list-item"><a href="{{ nav.mainNav.forum.url | relative_url }}" class="footer__link is-touch-friendly" target="_blank">{{ nav.mainNav.forum.title }}{%- include e_render-svg-icon.html icon="arrow-up-right" inline=true class="svg-icon--new-window" -%}</a></li>
-					<li class="footer__list-item"><a href="{{ nav.mainNav.blog.url | relative_url }}" class="footer__link is-touch-friendly" target="_blank">{{ nav.mainNav.blog.title }}{%- include e_render-svg-icon.html icon="arrow-up-right" inline=true class="svg-icon--new-window" -%}</a></li>
-					<li class="footer__list-item"><a href="{{ nav.footerNav.contact.url | relative_url }}" class="footer__link is-touch-friendly">{{ nav.footerNav.contact.title }}</a></li>
-					<li class="footer__list-item"><a href="{{ nav.hiddenNav.privacy.url | relative_url }}" class="footer__link is-touch-friendly">{{ nav.hiddenNav.privacy.title }}</a></li>
-				</ul>
-			</div>
-			<div class="column">
-				<h6 class="footer__column-title">{{ t.videos.title | upcase }}</h6>
-				<ul class="footer__list listless">
-					<li class="footer__list-item"><a href="{{ nav.mainNav.videos.url | relative_url }}" class="footer__link is-touch-friendly">{{ t.videos.techlore.title }}</a></li>
-					<li class="footer__list-item"><a href="{{ nav.mainNav.videos.url | relative_url }}#techlore-clips" class="footer__link is-touch-friendly">{{ t.videos.techloreClips.title }}</a>
-					</li>
-					<li class="footer__list-item">
-						<a href="{{ nav.mainNav.videos.url | relative_url }}#surveillance-report" class="footer__link is-touch-friendly">{{ t.videos.surveillanceReport.title }}</a></li>
-					<li class="footer__list-item"><a href="{{ nav.mainNav.goincognito.url | relative_url }}" class="footer__link is-touch-friendly">{{ t.goincognito.title }}</a></li>
+			<div class="column is-flex is-flex-direction-column is-justify-content-center">
+				<ul class="footer__list listless is-flex is-flex-direction-row is-multiline is-gap-8">
+					<li class="footer__list-item"><a href="{{ nav.mainNav.support.url }}" class="footer__link is-touch-friendly">{{ nav.mainNav.support.title }}</a></li>
 					<li class="footer__list-item"><a href="{{ site.techloreVideos.links.youtube }}" class="footer__link is-touch-friendly" target="_blank">YouTube{% include e_render-svg-icon.html icon="arrow-up-right" inline=true class="svg-icon--new-window" %}</a></li>
 					<li class="footer__list-item"><a href="{{ site.techloreVideos.links.peertube }}" class="footer__link is-touch-friendly" target="_blank">PeerTube{% include e_render-svg-icon.html icon="arrow-up-right" inline=true class="svg-icon--new-window" %}</a></li>
+					<li class="footer__list-item"><a href="{{ nav.mainNav.resources.url }}" class="footer__link is-touch-friendly">{{ nav.mainNav.resources.title }}</a></li>
 				</ul>
-			</div>
-			<div class="column">
-				<h6 class="footer__column-title">{{ t.resources.title | upcase }}</h6>
-				<ul class="footer__list listless">
-					<li class="footer__list-item"><a href="{{ nav.hiddenNav.spaQuiz.url | relative_url }}" class="footer__link is-touch-friendly">{{ nav.hiddenNav.spaQuiz.title }}</a></li>
+				<ul class="footer__list listless mt-6 is-flex is-flex-direction-row is-multiline is-gap-8">
 					<li class="footer__list-item"><a href="{{ nav.hiddenNav.vpnToolkit.url | relative_url }}" class="footer__link is-touch-friendly">{{ nav.hiddenNav.vpnToolkit.title }}</a></li>
 					<li class="footer__list-item"><a href="{{ nav.hiddenNav.plexus.url | relative_url }}" class="footer__link is-touch-friendly" target="_blank">{{ nav.hiddenNav.plexus.title }}{%- include e_render-svg-icon.html icon="arrow-up-right" inline=true class="svg-icon--new-window" -%}</a>
-					</li>
-					<li class="footer__list-item">
-						<a href="{{ nav.mainNav.resources.url | relative_url | append: '#techlore-guides' }}" class="footer__link is-touch-friendly">{{ t.videos.techloreGuides.title }}</a>
-					</li>
+					<li class="footer__list-item"><a href="{{ nav.footerNav.contact.url | relative_url }}" class="footer__link is-touch-friendly">{{ nav.footerNav.contact.title }}</a></li>
+					<li class="footer__list-item"><a href="{{ nav.hiddenNav.privacy.url | relative_url }}" class="footer__link is-touch-friendly">{{ nav.hiddenNav.privacy.title }}</a></li>
 				</ul>
 			</div>
 			<div class="column is-full-tablet is-one-fifth-desktop is-flex is-flex-direction-column">
@@ -98,17 +75,15 @@
 				</div>
 			</div>
 		</div>
-		<div class="is-size-7 has-text-centered has-text-white mt-6">
+		<div class="footer__copy is-size-7 has-text-centered mt-6">
 			{{ site.name }} &copy; {{ 'now' | date: '%Y' }}
 		</div>
 	</div>
 </footer>
 
+{% comment %}
 {% assign vpnPermalink = site.data._en.navigation.hiddenNav.vpnToolkit.url %}
 {% if page.permalink == vpnPermalink %}
-	{% comment %}
-		TODO: Remove SvelteJS, rewrite with vanilla JS
-	{% endcomment %}
 	<script src="{{ "/assets/vendors/sveltejs/svelte.min.js" | relative_url }}{{ 'now' | date: '%s' | prepend: "?" }}"></script>
 	<script src="{{ "/assets/vendors/tabulator/tabulator.min.js" | relative_url }}{{ 'now' | date: '%s' | prepend: "?" }}"></script>
 	<script src="{{ "/assets/js/vpn-chart.js" | relative_url }}{{ 'now' | date: '%s' | prepend: "?" }}"></script>
@@ -120,6 +95,7 @@
 	<script src="{{ "/assets/vendors/circle-progress/circle-progress.min.js" | relative_url }}{{ 'now' | date: '%s' | prepend: "?" }}"></script>
 	<script src="{{ "/assets/js/spa-quiz.js" | relative_url }}{{ 'now' | date: '%s' | prepend: "?" }}"></script>
 {% endif %}
+{% endcomment %}
 
 {% if page.url == "/" %}
 	<script src="{{ "/assets/js/textscramble.js" | relative_url }}{{ 'now' | date: '%s' | prepend: "?" }}"></script>
