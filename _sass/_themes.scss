@@ -26,6 +26,10 @@
 }
 
 @mixin dark-theme-vars {
+	--bulma-scheme-main: #1a1c22;
+	--translucent-bg: rgba(55, 57, 64, .5);
+	--ghost-text-color: #fff;
+
 	// --- feature-box
 	--custom-box-warning-bg: transparent;
 	--custom-box-warning-color: var(--bulma-warning);
@@ -68,6 +72,10 @@
 }
 
 @mixin light-theme-vars {
+	--bulma-scheme-main: #fff;
+	--translucent-bg: rgba(209, 213, 219, .4);
+	--ghost-text-color: #1a1c22;
+
 	// --- feature-box
 	--custom-box-warning-bg: var(--bulma-warning-95);
 	--custom-box-warning-border-color: transparent;

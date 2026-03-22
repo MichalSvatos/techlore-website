@@ -28,7 +28,6 @@ sitemap:
 				<h1 class="glitchEffect mb-2" data-text="{{ spaQuiz.title }}️">{{ spaQuiz.title }}️</h1>
 				<h5>{{ spaQuiz.desc }}</h5>
 				<button class="play-button button is-primary mt-6" id="quiz-game-btn">{{ spaQuiz.buttons.start }}️</button>
-				{%- include spa-quiz-sponsor-block.html -%}
 			</section>
 
 			<!-- QUIZ -->
@@ -207,10 +206,12 @@ sitemap:
 							%}
 						</div>
 					</div>
-
-					{%- include spa-quiz-sponsor-block.html -%}
 				</div>
 			</section>
 		</div>
 	</div>
 </section>
+
+<script src="{{ "/assets/vendors/sveltejs/svelte.min.js" | relative_url }}{{ 'now' | date: '%s' | prepend: "?" }}"></script>
+<script src="{{ "/assets/vendors/circle-progress/circle-progress.min.js" | relative_url }}{{ 'now' | date: '%s' | prepend: "?" }}"></script>
+<script src="{{ "/assets/js/spa-quiz.js" | relative_url }}{{ 'now' | date: '%s' | prepend: "?" }}"></script>

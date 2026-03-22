@@ -53,10 +53,12 @@
 	{% include meta/mastodon-meta.html -%}
 	{% include meta/schema-org.html -%}
 
+	{% comment %}
 	{% assign vpnPermalink = site.data._en.navigation.hiddenNav.vpnToolkit.url %}
 	{%- if page.permalink == vpnPermalink %}
 		<link rel="stylesheet" href="{{ "/assets/vendors/tabulator/tabulator.min.css" | relative_url }}{{ 'now' | date: '%s' | prepend: "?" }}">
 	{%- endif %}
+	{% endcomment %}
 	<link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}{{ 'now' | date: '%s' | prepend: "?" }}">
 
 	{% comment %}THX https://realfavicongenerator.net/ {% endcomment %}

@@ -139,12 +139,12 @@ discussTopicsConstructor()
 
 // Go TOP button
 const goTopButton = document.querySelector('.js-go-top-button')
-const wave = document.querySelector('.wave')
+const topchecker = document.querySelector('.topchecker')
 
 // --- default state
 goTopButton.setAttribute('data-visibility', 'false')
 
-if (goTopButton && wave) {
+if (goTopButton && topchecker) {
 	const observer = new IntersectionObserver((entries) => {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
@@ -157,8 +157,8 @@ if (goTopButton && wave) {
 		})
 	})
 
-	if (wave) {
-		observer.observe(wave)
+	if (topchecker) {
+		observer.observe(topchecker)
 	}
 }
 
@@ -197,7 +197,7 @@ if (knowledgebaseSection && knowledgebaseNavigation) {
 		})
 	}, {rootMargin: "-15% 0% 0% 0%"})
 
-	observer.observe(wave)
+	observer.observe(topchecker)
 
 	// --- hide scrollbar
 	const knowledgebaseScrollbarContainer = document.querySelector('.knowledgebase-navigation > .box')

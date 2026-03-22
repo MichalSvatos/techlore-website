@@ -1,5 +1,33 @@
 .footer {
 	background-color: var(--bulma-primary);
+	width: 1200px;
+	max-width: 90vw;
+	margin-inline: auto;
+	padding: 4rem 4rem 6.5rem;
+	margin-bottom: 3rem;
+	border-radius: 1.5rem;
+	overflow: hidden;
+	position: relative;
+
+	&::after {
+		content: attr(data-bottom-title);
+		position: absolute;
+		color: var(--bulma-scheme-main);
+		position: absolute;
+		left: 50%;
+		bottom: -1rem;
+		translate: -50% 0;
+		font-family: "Nunito", Lato, Arial, sans-serif;
+		font-size: 7.5rem;
+    	letter-spacing: -.03em;
+    	line-height: 1;
+    	margin-bottom: -.9rem;
+
+		@media (max-width: $desktop - 1px) {
+			font-size: 5rem;
+			margin-bottom: -.15rem;
+		}
+	}
 }
 
 .footer__logos {
@@ -28,6 +56,7 @@
 .footer__link,
 .footer__button {
 	color: var(--bulma-white);
+	text-transform: uppercase;
 }
 
 .footer__link {
@@ -43,6 +72,12 @@
 
 .footer__list {
 	flex-wrap: wrap;
+
+	&.is-gap-8 {
+		@media (max-width: $desktop - 1px) {
+			gap: 0 1rem !important;
+		}
+	}
 }
 
 .footer__logo {
@@ -54,6 +89,10 @@
 	& + & {
 		margin-top: var(--bulma-size-5);
 	}
+}
+
+.footer__copy {
+	color: #b1bdf2;
 }
 
 // --- Go TOP button
