@@ -7,6 +7,16 @@
 	backdrop-filter: blur(10px) saturate(180%);
 	transition: background-color 350ms ease-in-out;
 
+	@media (max-width: $desktop - 1px) {
+		&:has(input[id="navbar-menu-toggle"]:checked) {
+			border-radius: 0;
+			background-color: var(--bulma-scheme-main);
+			padding-top: 1rem;
+			top: 0;
+		}
+	}
+
+
 	@media (min-width: $desktop) {
 		width: 1200px;
 		max-width: 90vw;
@@ -22,6 +32,11 @@
 }
 
 .navbar-brand {
+	@media (max-width: $desktop - 1px) {
+		position: relative;
+		z-index: 5;
+	}
+
 	a.navbar-item {
 		font-weight: 600;
 
@@ -118,6 +133,8 @@ input[id="navbar-menu-toggle"] {
 
 		// --- simulate ".is-active" class
 		&:checked + .navbar-burger {
+			top: 1.4rem;
+
 			span:nth-child(1) {
 				transform: rotate(-45deg);
 			}
@@ -139,17 +156,19 @@ input[id="navbar-menu-toggle"] {
 
 	@media (max-width: $desktop - 1px) {
 		position: absolute;
-		inset: var(--_navBarGhostHeight) 1rem auto 1rem;
+		inset: 0 0 auto 0;
 		overflow-y: scroll;
 		height: calc(100vh - var(--_navBarGhostHeight));
-		border-radius: 1.5rem 1.5rem 0 0;
+		background-color: var(--bulma-scheme-main);
+		padding-top: calc(var(--_navBarGhostHeight) + 1rem);
 	}
 }
 
 .navbar-burger {
 	position: absolute;
-	inset: .5rem 0 auto auto;
-	color: var(--bulma-white);
+	inset: .4rem .5rem auto auto;
+	color: var(--ghost-text-color);
+	z-index: 6;
 
 	span {
 		border-radius: 100vmax;

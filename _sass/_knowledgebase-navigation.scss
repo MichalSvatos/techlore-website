@@ -103,7 +103,7 @@ ul.knowledgebase-navigation__menu-list {
 	aspect-ratio: 1;
 	position: absolute;
 	left: 0;
-	top: var(--bulma-size-1);
+	top: calc(var(--bulma-size-2) * 3);
 	background-color: var(--bulma-background);
 	border-radius: var(--bulma-radius) 0 0 var(--bulma-radius);
 	z-index: var(--_layer);
